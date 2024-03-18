@@ -1,0 +1,26 @@
+{
+  "name": "com.bandpad.cordova.microphone",
+  "version": "0.0.1",
+  "cordova": {
+        "id": "com.bandpad.cordova.microphone",
+        "platforms": [
+              "ios"
+        ]
+    },
+  "description": "Cordova iOS Microphone Record Permission",
+  "license": "Apache 2.0",
+   "repository":{
+        "type": "git",
+        "url": "https://github.com/amitgur/cordova-plugin-microphone.git"
+    },
+    "bugs": "https://github.com/amitgur/cordova-plugin-microphone.git/issues",
+   "keywords": [
+    "cordova",
+    "ios",
+    "microphone",
+    "permission",
+    "record"
+  ],
+   "engines": [],
+    "author": "Apache Software Foundation"
+}
