@@ -1,0 +1,90 @@
+﻿
+.video {
+    position: relative;
+}
+
+.footer {
+    display: none
+}
+
+.video3 {
+    background-image: url('../../Content/assets/images/90.jpg');
+    position: relative;
+    top: 0px;
+    height: 100vh;
+    width: 109vw;
+    border-radius: 0px;
+    left: 0px;
+    background-size: cover;
+    background-position: top;
+    right: 0px;
+}
+
+.video2 {
+    position: absolute;
+    top: 90px;
+    right: 70px;
+    bottom: 0;
+    height: 146px;
+    width: 170px;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    background-image: url('../../Content/assets/images/55.jpg');
+}
+
+.videobtn {
+    position: absolute;
+    bottom: 5px;
+    justify-content: center;
+    left: 0;
+    right: 0;
+}
+
+.btn_video {
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    border: 0px;
+}
+
+.redbtn {
+    background-color: red
+}
+
+.callname {
+    position: absolute;
+    bottom: 90px;
+    left: 0;
+    right: 0;
+}
+
+.video2 img {
+    height: 146px;
+    width: 170px;
+    border-radius: 20px;
+}
+
+.video1 {
+    background-image: url('../../Content/assets/images/90.jpg');
+}
+
+.btncolour {
+    background: red
+}
+
+.btncolour1 {
+    background: green
+}
+
+body {
+    font-family: 'Garamond Bold';
+    overflow: hidden;
+}
+
+.btndesign {
+    background: rgba(0,0,0,0.5);
+    padding: 10px 0;
+    border-radius: 7px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}

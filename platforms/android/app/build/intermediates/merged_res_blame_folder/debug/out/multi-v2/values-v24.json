@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.healthcare.dod.app-mergeDebugResources-17:/values-v24/values-v24.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Prachi\\.gradle\\caches\\transforms-3\\677d6bfd2a0fa81a5ea7d384ddaf69c3\\transformed\\appcompat-1.4.2\\res\\values-v24\\values-v24.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,212",
+                        "endColumns": "156,134",
+                        "endOffsets": "207,342"
+                    }
+                }
+            ]
+        }
+    ]
+}

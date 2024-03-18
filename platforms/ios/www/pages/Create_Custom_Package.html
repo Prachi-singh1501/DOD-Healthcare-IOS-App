@@ -1,0 +1,281 @@
+﻿<template>
+
+    <div class="page no-swipe-panel" data-name="Create_Custom_Package">
+        <script src="assets/js/GoBack.js"></script>
+
+        <script src="assets/js/button.js"></script>
+        <script src="assets/js/Create_Custom_Package.js"></script>
+        <style>
+            .spstyle {
+                background-color: #0ba2b6;
+                cursor: pointer;
+                width: auto;
+                padding: 3px 12px;
+                border-radius: 4px;
+                margin: 4px;
+                color: white;
+                font-size: 13px;
+                margin-top: 6px;
+            }
+            #AvailableSlots
+            {
+                display:flex;
+                flex-wrap:wrap
+            }
+            button.addbtn {
+                width: 64px;
+                background-color: #7775ab;
+                border: none;
+                border-radius: 30px;
+                color: white;
+                margin: 10px;
+                /* float: right; */
+            }
+            .form-check-input {
+    width: 1.8em;
+    height: 1.8em;
+    margin-top: 9px;
+    
+  
+}
+            .form-check-input:checked {
+    background-color: #0ba5b9  !important;
+    border-color: #0ba5b9  !important;
+}
+            div#Service {
+    line-height: 40px;
+}
+        </style>
+        <div class="page-content">
+
+            <!-- loader section -->
+            <div class="container-fluid loader-wrap">
+                <div class="row h-100">
+                    <div class="col-12 col-md-6 col-lg-5 col-xl-3 mx-auto text-center align-self-center">
+                        <div class="loader-cube-wrap mx-auto">
+                            <div class="loader-cube1 loader-cube"></div>
+                            <div class="loader-cube2 loader-cube"></div>
+                            <div class="loader-cube4 loader-cube"></div>
+                            <div class="loader-cube3 loader-cube"></div>
+                        </div>
+                        <!--<p>Let's Create Difference<br><strong>Please wait...</strong></p>-->
+                    </div>
+                </div>
+            </div>
+            <!-- loader section ends -->
+            <!-- profile information -->
+
+            <div class="row mb-3 header_pages">
+
+                <div class="col align-self-center  d-flex">
+                    <a href="#" class="icon back">
+                        <i class="bi bi-arrow-left-short"></i>
+                    </a>
+                    <h5 class="mb-0 pages_top_heading"> Create Custom Package</h5>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card card-light shadow-sm mb-4">
+                        <div class="card-body">
+                            <form id="appform">
+                                <div class="row">
+                                
+                                    <div class="col-12 col-md-6 col-lg-4">
+                                        <div class="form-group form-floating  mb-3">
+                                            <!--<input type="text" class="form-control" value=" " placeholder="Doctor Name" id="">-->
+                                            <select onchange="GetService(this)" name="ServiceHeadId" class="form-control appcheck" id="ServiceHead">
+                                                <option selected value="">Choose..</option>
+
+                                            </select>
+                                            <label for="names">Service Head</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-5">
+                                        <label>Select Services under the Package</label>
+                                        <div id="Service"class="mt-3">
+
+                                        </div>
+                                        <button type="button" class="addbtn mt-4">
+                                            Add
+                                        </button>
+                                        <hr />
+                                    </div>
+                                    <table class="text-center mb-5">
+                                        <thead>
+                                            <tr>
+                                                <th>Service Head</th>
+                                                <th>Service</th>
+                                                <th>Remove</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="Services_Data"></tbody>
+                                    </table>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="d-grid">
+                <button type="button" onclick="CreatePackage()" class="primary_btn" data-loading-text="<i class='fa fa-spinner fa-spin '></i>
+     Processing">
+                    Submit
+                </button>
+            </div>
+            <br />
+            <!--<div class="col-12 d-grid">
+            <a href="settings.html" target="_self" class="primary_btn">Update</a>
+            </div>-->
+            <!-- Modal -->
+
+            <div class="modal fade" id="HealthIssueModal1" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-sm modal-dialog-centered">
+                    <div class="modal-content product border-0 shadow-sm">
+                        <div class="modal-body">
+                            <div class="row mt-5">
+                                <label>Health Issue</label>
+                                <select class="form-control" id="HealthIssues">
+                                    <option selected value="">Choose..</option>
+                                </select>
+                                <label>Duration (in days)</label>
+                                <input type="number" class="form-control" placeholder="Duration" id="Duration">
+                                <button class="addbtn">
+                                    Add
+                                </button>
+                                <hr />
+                            </div>
+                            <div class="row mt-5 mb-5">
+                                
+                            </div>
+                        </div>
+                        <div class="modal-footer justify-content-center">
+                            <button type="button" class="btn btn-link text-color-theme" data-bs-dismiss="modal">Done</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container">
+                    <ul class="nav nav-pills nav-justified">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Corporate_Home/">
+                                <span>
+                                    <i class="nav-icon bi bi-house-fill"></i>
+
+                                    <span class="nav-text">Home</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/EmployeeList/">
+                                <span>
+                                    <i class="nav-icon bi bi-people-fill"></i>
+                                    <span class="nav-text">Stats</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item center-item">
+                            <a class="nav-link active" href="/Create_Custom_Package/">
+                                <span>
+                                    <img src="assets/img/stethoscope.png" />
+
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Corporate_Package/">
+                                <span>
+                                    <i class="nav-icon bi bi-box"></i>
+                                    <span class="nav-text">Style</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/CorporatePayment/">
+                                <span>
+                                    <i class="nav-icon bi bi-credit-card-2-back-fill"></i>
+                                    <span class="nav-text">Settings</span>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </footer>
+
+        </div>
+
+    </div>
+</template>
+
+<script>
+
+
+    return {
+        // Lifecycle Hooks
+        beforeCreate() {
+
+            console.log('componentBeforeCreate', this)
+        },
+        created() {
+            console.log('componentCreated', this)
+        },
+        beforeMount() {
+            console.log('componentBeforeMount', this)
+        },
+        mounted() {
+            console.log('componentMounted', this);
+        },
+        beforeDestroy() {
+            console.log('componentBeforeDestroy', this);
+        },
+        destroyed() {
+            console.log('componentDestroyed', this);
+        },
+        // Component Data
+        // Page Events
+        on: {
+            pageMounted: function (e, page) {
+
+
+            },
+            pageInit: function (e, page) {
+                console.log('pageInit', page);
+            },
+            pageBeforeIn: function (e, page) {
+                console.log('pageBeforeIn', page);
+            },
+            pageAfterIn: function (e, page) {
+                console.log('pageAfterIn', page);
+                //document.getElementById("preloader").style.display ="none";
+                $(".loader-wrap").hide();
+            },
+            pageBeforeOut: function (e, page) {
+                console.log('pageBeforeOut', page);
+
+
+            },
+            pageAfterOut: function (e, page) {
+                console.log('pageAfterOut', page);
+
+            },
+            pageBeforeRemove: function (e, page) {
+                console.log('pageBeforeRemove', page);
+
+            },
+        }
+    }
+
+</script>
+
+
+
+
+
+

@@ -1,0 +1,394 @@
+﻿<template>
+
+    <div class="page no-swipe-panel" data-name="appintmentDetail">
+        <script src="assets/js/GoBack.js"></script>
+
+        <script src="assets/js/appointmentDetail.js"></script>
+
+        <style>
+            span.badge.bg-purple {
+                background-color: purple;
+            }
+
+            .h-100 {
+                height: auto !important;
+            }
+            /* Tabs */
+
+            .tabs {
+                width: 100%;
+                /*background-color: #0ba8ba;*/
+                /*border-radius: 5px 5px 5px 5px;
+              background: linear-gradient(to right, rgba(8, 155, 171, 1) 0%, rgba(13, 181, 200, 1) 100%);
+              box-shadow: rgb(8 106 145) 0 3px 15px inset, rgb(21 113 150) 0 3px 5px, rgb(0 0 0 / 10%) 0 10px 13px;*/
+            }
+
+            ul#tabs-nav li:hover a {
+                color: white;
+            }
+
+            ul#tabs-nav {
+                list-style: none;
+                margin: 0;
+                padding: 5px;
+                overflow: auto;
+                display: flex;
+                justify-content: center;
+            }
+
+                ul#tabs-nav li.active {
+                    margin-right: 18px !important;
+                }
+
+                ul#tabs-nav li {
+                    margin-right: 18px !important;
+                    border: 1px solid #fb6229;
+                    float: left;
+                    font-weight: bold;
+                    margin-right: 2px;
+                    padding: 8px 10px;
+                    border-radius: 5px 5px 5px 5px;
+                    /*border: 1px solid #d5d5de;
+            border-bottom: none;*/
+                    cursor: pointer;
+                    width: 100px;
+                    text-align: center;
+                }
+
+                    ul#tabs-nav li a {
+                        text-decoration: unset;
+                        color: #fb6229;
+                    }
+
+                    ul#tabs-nav li:hover,
+                    ul#tabs-nav li.active {
+                        background-image: linear-gradient(45deg, #FF512F 0%, #F09819 51%, #FF512F 100%);
+                    }
+
+            #tabs-nav li.active a {
+                text-decoration: none;
+                color: #fff;
+            }
+
+            .tab-content {
+                padding: 10px;
+                /*border: 5px solid #09f;*/
+                background-color: transparent;
+            }
+
+            .coverimg img {
+                display: block;
+            }
+        </style>
+
+        <div class="page-content">
+            <!-- loader section -->
+            <div class="container-fluid loader-wrap">
+                <div class="row h-100">
+                    <div class="col-10 col-md-6 col-lg-5 col-xl-3 mx-auto text-center align-self-center">
+                        <div class="loader-cube-wrap mx-auto">
+                            <div class="loader-cube1 loader-cube"></div>
+                            <div class="loader-cube2 loader-cube"></div>
+                            <div class="loader-cube4 loader-cube"></div>
+                            <div class="loader-cube3 loader-cube"></div>
+                        </div>
+                        <p>Let's Create Difference<br><strong>Please wait...</strong></p>
+                    </div>
+                </div>
+            </div>
+            <!-- loader section ends -->
+            <input type="hidden" value="{{$route.params.AppId}}" id="AppId" />
+            <div class="row mb-3 header_pages">
+
+                <div class="col align-self-center  d-flex">
+                    <a href="#" class="icon back">
+                        <i class="bi bi-arrow-left-short"></i>
+                    </a>
+                    <h5 class="mb-0 pages_top_heading"> Appointment Detail</h5>
+                </div>
+
+            </div>
+            <div class="row mb-2">
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card shadow-sm mb-3">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-auto">
+                                    Patient Name :
+                                </div>
+                                <div class="col ps-0 PatientName">
+
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-auto">
+                                    Doctor Name :
+                                </div>
+                                <div class="col ps-0 DoctorName">
+
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-auto">
+                                    Doctor Location :
+                                </div>
+                                <div class="col ps-0 DoctorLocation ">
+
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-auto">
+                                    Appointment Date :
+                                </div>
+                                <div class="col ps-0 AppointmentDate">
+
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-auto">
+                                    Appointment Time :
+                                </div>
+                                <div class="col ps-0 Appointmenttime">
+
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-auto">
+                                    Consultation Type :
+                                </div>
+                                <div class="col ps-0 ConsultationType ">
+
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-auto">
+                                    Consultation Fees :
+                                </div>
+                                <div class="col ps-0 ConsultationFees">
+
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-auto">
+                                    Diagnosis :
+                                </div>
+                                <div class="col ps-0 Diagnosis">
+
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-auto">
+                                    Health Issues :
+                                </div>
+                                <div class="col ps-0 HealthIssues">
+
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-auto">
+                                    Old Medication :
+                                </div>
+                                <div class="col ps-0 OldMedication">
+
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-auto">
+                                    Blood Pressure :
+                                </div>
+                                <div class="col ps-0 BloodPressure">
+
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-auto">
+                                    Sugar :
+                                </div>
+                                <div class="col ps-0 Sugar">
+
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-auto">
+                                    Temperature :
+                                </div>
+                                <div class="col ps-0 Temperature">
+
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-auto">
+                                    SPO2 :
+                                </div>
+                                <div class="col ps-0 SPO2">
+
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-auto">
+                                    Weight :
+                                </div>
+                                <div class="col ps-0 Weight">
+
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-auto">
+                                    Appointment Mode :
+                                </div>
+                                <div class="col ps-0 AppointmentMode">
+
+                                </div>
+                            </div>
+                            <!--<div class="row mt-3">
+                            <div class="col-auto">
+                                Create By :
+                            </div>
+                            <div class="col ps-0 CreateBy">
+
+                            </div>
+                        </div>-->
+                            <div class="row mt-3">
+                                <div class="col-auto">
+                                    Create Date :
+                                </div>
+                                <div class="col ps-0 CreateDate">
+
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-auto">
+                                    Update Date :
+                                </div>
+                                <div class="col ps-0 UpdateDate">
+
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-auto">
+                                    Appointment Status :
+                                </div>
+                                <div class="col ps-0 AppointmentStatus">
+
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-auto">
+                                    Payment Id :
+                                </div>
+                                <div class="col ps-0 ">
+                                    trx-1200012023434
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-auto">
+                                    Pay Status :
+                                </div>
+                                <div class="col ps-0 ">
+                                    <span class="badge bg-danger">UnPaid</span>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-auto">
+                                    Pay Mode :
+                                </div>
+                                <div class="col ps-0 ">
+                                    online
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+        <!-- END tabs -->
+        <script>
+            // Show the first tab and hide the rest
+            $("#tabs-nav li:first-child").addClass("active");
+            $(".tab-content").hide();
+            $(".tab-content:first").show();
+
+            // Click function
+            $("#tabs-nav li").click(function () {
+                $("#tabs-nav li").removeClass("active");
+                $(this).addClass("active");
+                $(".tab-content").hide();
+
+                var activeTab = $(this).find("a").attr("href");
+                $(activeTab).fadeIn();
+                return false;
+            });
+
+        </script>
+    </div>
+</template>
+
+<script>
+
+
+    return {
+        // Lifecycle Hooks
+        beforeCreate() {
+
+            console.log('componentBeforeCreate', this)
+        },
+        created() {
+            console.log('componentCreated', this)
+        },
+        beforeMount() {
+            console.log('componentBeforeMount', this)
+        },
+        mounted() {
+            console.log('componentMounted', this);
+        },
+        beforeDestroy() {
+            console.log('componentBeforeDestroy', this);
+        },
+        destroyed() {
+            console.log('componentDestroyed', this);
+        },
+        // Component Data
+        // Page Events
+        on: {
+            pageMounted: function (e, page) {
+
+
+            },
+            pageInit: function (e, page) {
+                console.log('pageInit', page);
+            },
+            pageBeforeIn: function (e, page) {
+                console.log('pageBeforeIn', page);
+            },
+            pageAfterIn: function (e, page) {
+                console.log('pageAfterIn', page);
+                //document.getElementById("preloader").style.display ="none";
+                $(".loader-wrap").hide();
+            },
+            pageBeforeOut: function (e, page) {
+                console.log('pageBeforeOut', page);
+
+
+            },
+            pageAfterOut: function (e, page) {
+                console.log('pageAfterOut', page);
+
+            },
+            pageBeforeRemove: function (e, page) {
+                console.log('pageBeforeRemove', page);
+
+            },
+        }
+    }
+
+</script>
+
+
+
+
+
+

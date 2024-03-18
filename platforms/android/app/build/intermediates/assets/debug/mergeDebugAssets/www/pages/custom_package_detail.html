@@ -1,0 +1,338 @@
+﻿<template>
+
+    <div class="page no-swipe-panel" data-name="custom_package_detail">
+        <script src="assets/js/GoBack.js"></script>
+
+      
+        <script src="assets/js/custom_package_detail.js"></script>
+
+        <style>
+            .detail_btn {
+                font-size: 11px;
+                padding: 6px 14px;
+                border-radius: 54px;
+                width: 110px;
+                background: #099fb0;
+            }
+
+
+
+
+
+
+
+            section {
+                margin: 0 auto;
+                max-width: 660px;
+                padding: 0 20px;
+            }
+
+            h1 {
+                font-weight: normal;
+                position: relative;
+                background: #F4F9FA;
+                width: 50%;
+                color: #F8463F;
+                text-align: center;
+                padding: 10px 20px;
+                margin: 20px auto 40px;
+                text-transform: uppercase;
+                border-radius: 2px;
+            }
+
+                h1:before, h1:after {
+                    content: "";
+                    position: absolute;
+                    top: -6px;
+                    border: 18px solid #DCF4F4;
+                }
+
+                h1:before {
+                    left: -36px;
+                    border-right-width: 18px;
+                    border-left-color: transparent;
+                }
+
+                h1:after {
+                    right: -36px;
+                    border-left-width: 18px;
+                    border-right-color: transparent;
+                }
+
+                h1 span:before, h1 span:after {
+                    content: "";
+                    position: absolute;
+                    border-style: solid;
+                    border-color: #A7CECC transparent transparent transparent;
+                    top: -6px;
+                    transform: rotate(180deg);
+                }
+
+                h1 span:before {
+                    left: 0;
+                    border-width: 6px 0 0 6px;
+                }
+
+                h1 span:after {
+                    right: 0;
+                    border-width: 6px 6px 0 0;
+                }
+
+            .ribbon {
+                width: 48%;
+                height: 65px;
+                position: relative;
+                float: left;
+                margin-bottom: 30px;
+                background: url(https://html5book.ru/wp-content/uploads/2015/10/snow-road.jpg);
+                background-size: cover;
+                text-transform: uppercase;
+                color: white;
+            }
+
+                .ribbon:nth-child(even) {
+                    margin-right: 4%;
+                }
+
+            @media (max-width: 500px) {
+                .ribbon {
+                    width: 100%;
+                }
+
+                    .ribbon:nth-child(even) {
+                        margin-right: 0%;
+                    }
+            }
+
+            .ribbon5 {
+                display: block;
+                width: calc(100% + 20px);
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                margin-left: -10px;
+                margin-right: -10px;
+                background: #EDBA19;
+                position: relative;
+                top: 20px;
+            }
+
+                .ribbon5:before, .ribbon5:after {
+                    content: "";
+                    position: absolute;
+                }
+
+                .ribbon5:before {
+                    height: 0;
+                    width: 0;
+                    bottom: -10px;
+                    left: 0;
+                    border-top: 10px solid #cd8d11;
+                    border-left: 10px solid transparent;
+                }
+
+                .ribbon5:after {
+                    height: 0;
+                    width: 0;
+                    right: 0;
+                    bottom: -10px;
+                    border-top: 10px solid #cd8d11;
+                    border-right: 10px solid transparent;
+                }
+
+            .wrap {
+                width: 100%;
+                height: 188px;
+                position: absolute;
+                top: -8px;
+                left: 8px;
+                overflow: hidden;
+            }
+
+                .wrap:before, .wrap:after {
+                    content: "";
+                    position: absolute;
+                }
+
+                .wrap:before {
+                    width: 40px;
+                    height: 8px;
+                    right: 100px;
+                    background: #4D6530;
+                    border-radius: 8px 8px 0px 0px;
+                }
+
+                .wrap:after {
+                    width: 8px;
+                    height: 40px;
+                    right: 0px;
+                    top: 100px;
+                    background: #4D6530;
+                    border-radius: 0px 8px 8px 0px;
+                }
+
+            .count {
+                font-size: 14px;
+                font-weight: bold;
+            }
+
+            .spstyle {
+                background-color: #edc064;
+                cursor: pointer;
+                width: auto;
+                padding: 0px 12px;
+                border-radius: 10px;
+                margin: 3px;
+            }
+
+            button.addbtn {
+                width: 64px;
+                background-color: #7775ab;
+                border: none;
+                border-radius: 30px;
+                /* float: right; */
+            }
+        </style>
+        <div class="page-content">
+
+            <!-- loader section -->
+            <div class="container-fluid loader-wrap">
+                <div class="row h-100">
+                    <div class="col-12 col-md-6 col-lg-5 col-xl-3 mx-auto text-center align-self-center">
+                        <div class="loader-cube-wrap mx-auto">
+                            <div class="loader-cube1 loader-cube"></div>
+                            <div class="loader-cube2 loader-cube"></div>
+                            <div class="loader-cube4 loader-cube"></div>
+                            <div class="loader-cube3 loader-cube"></div>
+                        </div>
+                        <!--<p>Let's Create Difference<br><strong>Please wait...</strong></p>-->
+                    </div>
+                </div>
+            </div>
+            <!-- loader section ends -->
+            <!-- profile information -->
+
+            <div class="row mb-3 header_pages">
+
+                <div class="col align-self-center  d-flex">
+                    <a href="#" class="icon back">
+                        <i class="bi bi-arrow-left-short"></i>
+                    </a>
+                    <h5 class="mb-0 pages_top_heading"> Package</h5>
+                </div>
+
+            </div>
+            <input type="hidden" value="{{$route.params.PackageId}}" id="PackageId" />
+            <input type="hidden" value="{{$route.params.PackageName}}" id="PackageName" />
+            <input type="hidden" value="{{$route.params.Amount}}" id="Amount" />
+            <input type="hidden" value="{{$route.params.PackageType}}" id="PackageType" />
+            <input type="hidden" value="{{$route.params.PackageStatus}}" id="PackageStatus" />
+
+            <div class="row" id="packagedetail">
+                <dvi class="text-center">
+                    <img id="loaderimg" src="assets/img/Loader_.gif" />
+                </dvi>
+                <!--<div class="col-6 col-md-4 col-lg-3">
+                  <div class="card shadow-sm product mb-4">
+                      <div class="card-body">
+                          <div class="row">
+                              <div class="col">
+                                  <a href="#" class="text-normal text-color-theme">
+                                      <h6 class="mb-1">For Males 20-40 Years </h6>
+                                  </a>
+                                  <p class="mb-1">$8.00
+                                  <small class="text-opac">/ per month</small>
+                                  </p>
+
+                                      <h6 class="text-color-theme mt-2 mb-2">Cardiology</h6>
+
+                                  <p class="mb-1"><i class="bi bi-arrow-up-right-circle text-color-theme"></i> &nbsp;ECG </p>
+                                  <p class="mb-1"><i class="bi bi-arrow-up-right-circle text-color-theme"></i> &nbsp;                                        Blood Group </p>
+                                  <h6 class="text-color-theme mt-2 mb-2">BioChemistry</h6>
+
+                                  <p class="mb-1"><i class="bi bi-arrow-up-right-circle text-color-theme"></i> &nbsp;ECG </p>
+                                  <p class="mb-1"><i class="bi bi-arrow-up-right-circle text-color-theme"></i> &nbsp;                                        Blood Group </p>
+                                  <div class="text-end d-grid mt-4">
+                                      <button class="btn btn-default shadow"> Buy Now</button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>-->
+
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+</template>
+
+<script>
+
+
+    return {
+        // Lifecycle Hooks
+        beforeCreate() {
+
+            console.log('componentBeforeCreate', this)
+        },
+        created() {
+            console.log('componentCreated', this)
+        },
+        beforeMount() {
+            console.log('componentBeforeMount', this)
+        },
+        mounted() {
+            console.log('componentMounted', this);
+        },
+        beforeDestroy() {
+            console.log('componentBeforeDestroy', this);
+        },
+        destroyed() {
+            console.log('componentDestroyed', this);
+        },
+        // Component Data
+        // Page Events
+        on: {
+            pageMounted: function (e, page) {
+
+
+            },
+            pageInit: function (e, page) {
+                console.log('pageInit', page);
+            },
+            pageBeforeIn: function (e, page) {
+                console.log('pageBeforeIn', page);
+            },
+            pageAfterIn: function (e, page) {
+                console.log('pageAfterIn', page);
+                //document.getElementById("preloader").style.display ="none";
+                $(".loader-wrap").hide();
+            },
+            pageBeforeOut: function (e, page) {
+                console.log('pageBeforeOut', page);
+
+
+            },
+            pageAfterOut: function (e, page) {
+                console.log('pageAfterOut', page);
+
+            },
+            pageBeforeRemove: function (e, page) {
+                console.log('pageBeforeRemove', page);
+
+            },
+        }
+    }
+
+</script>
+
+
+
+
+
+

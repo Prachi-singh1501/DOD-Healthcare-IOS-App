@@ -1,0 +1,435 @@
+﻿<template>
+    <div class="page " data-name="video_chat">
+
+        <link href="assets/css/toast.css" rel="stylesheet" />
+
+        <script src="assets/js/GoBack.js"></script>
+        <script src="assets/vendor/bootstrap-5/js/bootstrap.bundle.min.js"></script>
+        <link href="assets/css/Client_Videocall.css" rel="stylesheet" />
+        <link href="assets/css/basiclive.css" rel="stylesheet" />
+
+        <link href="assets/css/icons.min.css" rel="stylesheet" />
+        <style>
+            .local-player {
+                top: 75px
+            }
+        </style>
+
+        <style>
+            .bg-danger {
+                background-color: red !important;
+                color: white;
+            }
+
+            .bg-success {
+                background-color: green !important;
+                color: white;
+            }
+
+            .clientedit_ {
+                /*margin-bottom: 60px;*/
+                margin-top: 10px;
+            }
+
+            .small_text {
+                color: #a4a1a1;
+                font-size: 13px;
+            }
+
+            .smalltext- {
+                color: #a4a1a1;
+                margin-left: 20px;
+            }
+
+            .smalltext {
+                color: #a4a1a1;
+            }
+
+            .designhead {
+                padding: 0px 10px 20px;
+                background-color: #e0c11f;
+            }
+
+            .item-card-gradual {
+                border-radius: 7px;
+                box-shadow: rgb(0 0 0 / 5%) 0px 3px 6px, rgb(0 0 0 / 10%) 0px 3px 6px;
+                margin: 13px;
+            }
+
+            .video {
+                position: relative;
+            }
+
+            .video3 {
+                background: url(images/90.jpg);
+                position: relative;
+                top: 0px;
+                height: 100vh;
+                width: 109vw;
+                border-radius: 0px;
+                left: 0px;
+                background-size: cover;
+                background-position: top;
+                right: 0px;
+            }
+
+            .space-sticky {
+                height: 0px;
+            }
+
+            header.default.heade-sticky {
+                position: absolute;
+                width: 100%;
+                z-index: 99;
+                background-color: var(--white);
+                /* background-color: #e0c11f; */
+                top: 0px;
+                background-color: #0000005e;
+            }
+
+            .video2 {
+                position: absolute;
+                top: 50px;
+                /* left: 20px; */
+                position: absolute;
+                top: 50px;
+                /* left: 0; */
+                right: 8px;
+                bottom: 0;
+                height: 109px;
+                width: 100px;
+                border-radius: 10px;
+                background: url(images/Collection/55.jpg);
+                background-size: cover;
+                background-position: center;
+            }
+
+            .videobtn {
+                position: absolute;
+                bottom: 27px;
+                justify-content: center;
+                left: 0;
+                right: 0;
+            }
+
+            .btn_video {
+                height: 40px;
+                width: 40px;
+                border-radius: 100%;
+                border: 0px;
+            }
+
+            .redbtn {
+                background-color: red;
+            }
+
+            .callname {
+                position: absolute;
+                bottom: 88px;
+                left: 0;
+                right: 0;
+            }
+
+            .video2 img {
+                height: 129px;
+                width: 137px;
+                border-radius: 20px;
+            }
+        </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/js/bootstrap.bundle.min.js"></script>
+
+        <script>
+            var timerContainer = document.querySelector('.timer'),
+                playBtn = document.querySelector('.play'),
+                playIcon = document.querySelector('.play i'),
+                resetBtn = document.querySelector('.reset');
+
+            //timer variables
+            let timeInterval = null,
+                timeStatus = false,
+                minutes = 0,
+                seconds = 0,
+                hours = 0,
+                leadingMins = 0,
+                leadingSecs = 0,
+                leadingHrs = 0;
+
+
+            function startTimer() {
+                seconds++;
+                //if seconds dived by 60 = 1 set back the seconds to 0 and increment the minutes
+                if (seconds / 60 === 1) {
+                    seconds = 0;
+                    minutes++;
+                    //if minutes dived by 60 = 1 set back the minutes to 0 and increment the hours
+                    if (minutes / 60 === 1) {
+                        minutes = 0;
+                        hours++;
+                    }
+                }
+                //add zero if seconds are less than 10
+                if (seconds < 10) {
+                    leadingSecs = '0' + seconds.toString();
+                } else {
+                    leadingSecs = seconds;
+                };
+                //add zero if minutes are less than 10
+                if (minutes < 10) {
+                    leadingMins = '0' + minutes.toString();
+                } else {
+                    leadingMins = minutes;
+                };
+                //add zero if hours are less than 10
+                if (hours < 10) {
+                    leadingHrs = '0' + hours.toString();
+                } else {
+                    leadingHrs = hours;
+                };
+                //Change timer text content to actaul stop watch
+                timerContainer.innerHTML = `${leadingHrs} : ${leadingMins} : ${leadingSecs}`;
+            }
+
+            //play/pause button functionality
+            playBtn.addEventListener('click', (e) => {
+                console.log("play");
+                if (timeStatus === false) {
+                    timeInterval = setInterval(startTimer, 1000);
+                    playBtn.innerHTML = `<i class="fa-solid fa-pause"><i/>`;
+                    timeStatus = true;
+                } else {
+                    window.clearInterval(timeInterval);
+                    playBtn.innerHTML = `<i class="fa-solid fa-play"><i/>`;
+                    timeStatus = false;
+                }
+            })
+
+
+        </script>
+        <script>
+            $(document).ready(function () {
+                //alert('ready');
+                JoinBtn();
+                //$("#join").trigger('click');
+
+
+                $("#starttimer").trigger('click');
+            })
+
+
+        </script>
+        <div class="page-content" style="overflow:hidden">
+            <div class="container-fluid loader-wrap">
+                <div class="row h-100">
+                    <div class="col-12 col-md-6 col-lg-5 col-xl-3 mx-auto text-center align-self-center">
+                        <div class="loader-cube-wrap mx-auto">
+                            <div class="loader-cube1 loader-cube"></div>
+                            <div class="loader-cube2 loader-cube"></div>
+                            <div class="loader-cube4 loader-cube"></div>
+                            <div class="loader-cube3 loader-cube"></div>
+                        </div>
+                        <!--<p>Let's Create Difference<br><strong>Please wait...</strong></p>-->
+                    </div>
+                </div>
+            </div>
+            <!-- loader section ends -->
+            <!-- profile information -->
+
+            <div class="row mb-3 header_pages" style="padding:5px 0">
+
+                <div class="col align-self-center  d-flex">
+                    <a href="#" class="icon back">
+                        <i class="bi bi-arrow-left-short"></i>
+                    </a>
+                    <button style="display:none" id="starttimer" class="btns play">
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+                    <div class="w-100">
+                        <h5 class="mb-0 pages_top_heading"> Appointment with Dr.{{$route.params.DoctorName}}</h5>
+                        <span style="margin-left:8px" class="text-white">Session Duration  :</span><span class="banner-text timer text-white fw-bold">00 : 00: 00 </span>
+                    </div>
+                   
+                </div>
+
+            </div>
+            <!-- ===================================
+      START LODAER PAGE
+    ==================================== -->
+            <!--<section class="loader-page" id="loaderPage">
+        <div class="spinner_flash"></div>
+    </section>-->
+            <!-- START WRAPPER -->
+            <div id="wrapper">
+                <!-- START CONTENT -->
+                <div id="content">
+
+                    <!--<input type="hidden" value="{{$route.params.PatientId}}" id="PatientId" />-->
+                    <input type="hidden" value="{{$route.params.App_ID}}" id="Appid" />
+                    <input type="hidden" value="{{$route.params.DoctorId}}" id="DoctorId" />
+
+                    <!-- ===================================
+              START THE HEADER
+            ==================================== -->
+                    <!-- ===================================
+              START THE SPACE STICKY
+            ==================================== -->
+                    <div class="space-sticky"></div>
+                    <!-- ===================================
+              START THE ACTIIVITY PAGE
+            ==================================== -->
+                    <div class="container ">
+                        <form id="join-form2" style="display:none">
+                            <div class="row join-info-group">
+                                <div class="col-sm">
+                                    <p class="join-info-text">AppID</p>
+                                    <input id="appid" value="43ab4cb2c9fd43f2b48f530064039804" type="text" placeholder="Enter AppID" required class="form-control">
+                                </div>
+                                <div class="col-sm">
+                                    <p class="join-info-text">Channel</p>
+                                    <input id="channel" value="{{$route.params.App_ID}}" type="text" placeholder="Enter Channel Name" required class="form-control">
+                                </div>
+                                <div class="col-sm">
+                                    <p class="join-info-text">ConferenceType</p>
+                                    <input id="SessionAppType" value="{{$route.params.Mode}}" type="text" placeholder="Enter Channel Name" required class="form-control">
+                                </div>
+                                <div class="col-sm">
+                                    <p class="join-info-text">Name</p>
+                                    <input id="accountName" value="{{$route.params.PatientId}}" type="text" placeholder="Enter Your Name" required class="form-control">
+                                </div>
+                            </div>
+                            <div class="button-group mt-2">
+                                <button id="join" type="button" class="btn btn-sm">Join</button>
+                                <!--@*<button id="mic-btn" type="button" class="btn btn-sm" disabled>
+                            <i id="mic-icon" class="fa fa-microphone"></i>
+                        </button>
+                        <button id="video-btn" type="button" class="btn btn-sm" disabled>
+                            <i id="video-icon" class="fa fa-video"></i>
+                        </button>
+                        <button id="leave" type="button" class="btn btn-sm" disabled>Leave</button>*@-->
+                            </div>
+                        </form>
+
+                        <!-- Single button -->
+                        <div class="row video-group" >
+                            <div class="col">
+                                <p id="local-player-name" class="player-name2"></p>
+                                <div id="local-player" class="local-player"></div>
+                            </div>
+                            <div class="w-100"></div>
+                            <div class="col">
+                                <div id="remote-playerlist"></div>
+                            </div>
+                        </div>
+
+                        <div class="row  videobtn  text-center" style="">
+
+
+                            <div class="col-lg-5 col-sm-6 btndesign mx-auto d-flex " style="
+    top: 0;
+    z-index: 9999999;
+    justify-content:space-around
+">
+
+
+                                <div class="col-lg-1">
+
+                                </div>
+                                <div class="col-lg-2">
+                                    <!--@*<button class="button  btn_video ">   <i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>*@-->
+                                </div>
+
+                                <div class="col-lg-2">
+                                    <button id="mic-btn" onclick="toggleMic()" class="button text-white btn_video btncolour1"><i class="bi bi-mic-fill" id="mic-icon" aria-hidden="true"></i>
+                                                                                                                          
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button id="video-btn" onclick="toggleVideo()" style="background:#f7c201;color:black" class="button btn_video "><i class="bi bi-camera-video-fill" id="video-icon" aria-hidden="true"></i>
+                                   
+                                    </button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button id="leave" onclick="leave()" class="button text-white btn_video btncolour"><i style="transform:rotate(224deg)" class="bi bi-telephone-fill" aria-hidden="true"></i></button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <!--@*<button class="button text-white btn_video btncolour1"> <i class="fa fa-video" aria-hidden="true"></i></button>*@-->
+                                </div>
+                                <div class="col-lg-1">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="container-fluid banner">
+
+
+            </div>
+
+
+
+
+
+        </div>
+
+
+
+
+    </div>
+
+</template>
+<script>
+
+
+    return {
+        // Lifecycle Hooks
+        beforeCreate() {
+
+            console.log('componentBeforeCreate', this)
+        },
+        created() {
+            console.log('componentCreated', this)
+        },
+        beforeMount() {
+            console.log('componentBeforeMount', this)
+        },
+        mounted() {
+            console.log('componentMounted', this);
+        },
+        beforeDestroy() {
+            console.log('componentBeforeDestroy', this);
+        },
+        destroyed() {
+            console.log('componentDestroyed', this);
+        },
+        // Component Data
+        // Page Events
+        on: {
+            pageMounted: function (e, page) {
+
+            },
+            pageInit: function (e, page) {
+                console.log('pageInit', page);
+            },
+            pageBeforeIn: function (e, page) {
+                console.log('pageBeforeIn', page);
+            },
+            pageAfterIn: function (e, page) {
+                $("#join").click;
+                console.log('pageAfterIn', page);
+                $(".loader-page").hide();
+            },
+            pageBeforeOut: function (e, page) {
+                console.log('pageBeforeOut', page);
+            },
+            pageAfterOut: function (e, page) {
+                console.log('pageAfterOut', page);
+            },
+            pageBeforeRemove: function (e, page) {
+                console.log('pageBeforeRemove', page);
+            },
+        }
+    }
+</script>

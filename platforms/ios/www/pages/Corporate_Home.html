@@ -1,0 +1,513 @@
+
+<template>
+
+    <div class="page" data-name="Corporate_Home">
+        <script src="assets/js/GoBack.js"></script>
+
+        <script src="assets/js/main.js"></script>
+        <link href="assets/vendor/nouislider/nouislider.min.css" rel="stylesheet" />
+        <script src="assets/vendor/nouislider/nouislider.min.js"></script>
+        <script src="assets/js/Corporate_Home.js"></script>
+        <!-- calendar -->
+        <script>
+            var swiper2 = new Swiper(".offerslides", {
+                slidesPerView: "1",
+                spaceBetween: 10,
+                pagination: {
+                    el: ".pagination-offerslides",
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 1,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                    },
+                },
+            });
+
+            var swiper4 = new Swiper(".shopslides", {
+                slidesPerView: "1",
+                spaceBetween: 10,
+            });
+            var swiper4 = new Swiper(".shopslides1", {
+                slidesPerView: "1",
+                spaceBetween: 10,
+            });
+        </script>
+
+
+        <style>
+            .avatar.avatar-40 {
+                line-height: 40px;
+                height: 34px;
+                width: 40px;
+            }
+
+            }
+
+            .avatar.avatar-40 img {
+                height: 45px;
+                width: 45px;
+            }
+
+            .spstyle {
+                background-color: #edc064;
+                cursor: pointer;
+                width: auto;
+                padding: 0px 12px;
+                border-radius: 10px;
+                margin: 3px;
+            }
+            /*.page-content {
+                padding: 100px 0;
+            }*/
+            .tooltip-btn {
+                /*right: -34%;*/
+                /* display: none !important; */
+            }
+
+            .py-1 {
+                padding-top: 2.25rem !important;
+                padding-bottom: 2.25rem !important;
+            }
+            /*main.has-header {
+                padding-top: 39px;
+            }*/
+            /*.ps-0 {
+                padding-left: 10px !important;
+            }*/
+        </style>
+        <div class="page-content has-header has-footer" style="padding-top:80px;">
+
+            <!-- loader section -->
+            <div class="container-fluid loader-wrap">
+                <div class="row h-100">
+                    <div class="col-10 col-md-6 col-lg-5 col-xl-3 mx-auto text-center align-self-center">
+                        <div class="loader-cube-wrap mx-auto">
+                            <div class="loader-cube1 loader-cube"></div>
+                            <div class="loader-cube2 loader-cube"></div>
+                            <div class="loader-cube4 loader-cube"></div>
+                            <div class="loader-cube3 loader-cube"></div>
+                        </div>
+                        <!--<p>Let's Create Difference<br><strong>Please wait...</strong></p>-->
+                    </div>
+                </div>
+            </div>
+            <header class="container-fluid header">
+                <div class="row">
+                    <div class="col-auto align-self-center">
+                        <button type="button" class="btn btn-link panel-open menu-btn text-color-theme" style="background:unset; width:unset">
+                            <i class="bi bi-list size-24"></i>
+                        </button>
+                    </div>
+                    <div class="col text-center">
+                        <div class="logo-small">
+                            <img src="assets/img/logo.png" alt="" class="img">
+
+                        </div>
+                    </div>
+                    <div class="col-auto align-self-center">
+                        <a href="/Corporate_Profile/" class="link text-color-theme">
+                            <i class="bi bi-person-circle size-22"></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card card-theme shadow-sm mb-4">
+                        <div class="card-body">
+                            <div class="card card-light mb-3">
+                                <div class="card-body">
+                                    <div class="row justify-content-flex-start">
+                                        <div class="col-auto">
+                                            <figure class="avatar avatar-80 rounded mx-auto">
+                                                <img class="User_Img" src="assets/img/defaultuser.png" alt="">
+                                            </figure>
+                                        </div>
+                                        <div class="col-auto align-self-center">
+                                            <h5 class="mb-0 text-white User_Name"> </h5>
+                                            <p class="text-align-center User_Address"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--<div class="row mb-3">
+                        <div class="col-auto align-self-center">
+                            <i class="bi bi-wallet size-32"></i>
+                        </div>
+                        <div class="col align-self-center">
+                            <h2 class="mb-0">1364 <small>USD</small></h2>
+                        </div>
+                        <div class="col-auto">
+                            <a href="addmoney.html" class="btn btn-sm avatar avatar-40 p-0 rounded-circle shadow btn-gradient">
+                                <i class="bi bi-plus size-22"></i>
+                            </a>
+                        </div>
+                    </div>-->
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card shadow-sm product">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-auto">
+                                                    <div class="avatar avatar-50 rounded bg-danger text-white">
+                                                        <i class="bi bi-credit-card"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="col ps-0 align-self-center">
+                                                    <span class="small text-opac mb-0">Payment</span>
+                                                    <p class="mb-1 Payment">₹ 0</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card shadow-sm product">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-auto">
+                                                    <div class="avatar avatar-50 rounded bg-success text-white">
+                                                        <i class="bi bi-gift"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="col ps-0 align-self-center">
+                                                    <span class="small text-opac mb-0">Total Tests Done</span>
+                                                    <p class="mb-1 totaltest">0</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Near by shops -->
+            <div class="bg-transparent  row mb-3">
+                <div class="col">
+                    <h5 class="mb-0 text-black">Special Offers</h5>
+                </div>
+            </div>
+            <div class="swiper-container offerslides mb-3">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <!--<div class="swiper-slide">
+                <div class="card shadow-sm card-theme s1">
+                    <div class="card-body py-1">
+                        <div class="row">
+                            <div class="col-6">
+                                <img src="assets/img/sl1.jpg" alt="" class="mw-100">
+                            </div>
+                            <div class="col text-start align-self-center ps-0">
+                                <h6 class="fw-normal mb-0">Season Discount</h6>
+                                <h2>50% OFF</h2>
+                                <p>Use Code<br><strong>"SEASON01"</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+                    <div class="swiper-slide">
+                        <div>
+                            <img src="assets/img/sl-4.jpg" alt="" class="mw-100">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div>
+                            <img src="assets/img/sl-1.jpg" alt="" class="mw-100">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div>
+                            <img src="assets/img/sl-3.jpg" alt="" class="mw-100">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination pagination-offerslides"></div>
+            </div>
+
+            <!-- Near by shops -->
+            <!--<div class="bg-transparent row mb-3">
+                <div class="col">
+                    <h5 class="mb-0 text-black">Lab Test Report</h5>
+                </div>
+            </div>-->
+            <!-- shop slides -->
+
+            <!--<div class="row">
+                <div class="col-12 px-0">
+                    <div class="swiper-container shopslides mb-3">
+                      
+                        <div class="swiper-wrapper">
+                           
+                            <div class="swiper-slide">
+                                <div class="row mb-2">
+                                    <div class="col-12 col-md-6 col-lg-3">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control is-valid" id="couponcode" placeholder="Coupon Code" value="02-11-2022">
+                                            <label for="couponcode">Blood Test Report</label>
+                                            <button type="button" class="btn btn-link text-success tooltip-btn ">
+                                                <i class="bi bi-cloud-arrow-down-fill"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="row mb-2">
+                                    <div class="col-12 col-md-6 col-lg-3">
+                                        <div class="form-floating ">
+                                            <input type="text" class="form-control is-valid" id="couponcode" placeholder="Coupon Code" value="03-11-2022">
+                                            <label for="couponcode">Sugar Test Report </label>
+                                            <button type="button" class="btn btn-link text-success tooltip-btn ">
+                                                <i class="bi bi-cloud-arrow-down-fill"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="row mb-2">
+                                    <div class="col-12 col-md-6 col-lg-3">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control is-valid" id="couponcode" placeholder="Coupon Code" value="04-11-2022">
+                                            <label for="couponcode">Kidney Test Report</label>
+                                            <button type="button" class="btn btn-link text-success tooltip-btn ">
+                                                <i class="bi bi-cloud-arrow-down-fill"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="row mb-2">
+                                    <div class="col-12 col-md-6 col-lg-3">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control is-valid" id="couponcode" placeholder="Coupon Code" value="05-11-2022">
+                                            <label for="couponcode">Thyroid Test Report</label>
+                                            <button type="button" class="btn btn-link text-success tooltip-btn valid-tooltip" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Email is valid">
+                                                <i class="bi bi-cloud-arrow-down-fill"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+
+            <div class="bg-transparent row mb-3">
+                <div class="col">
+                    <h5 class="mb-0 text-black">Active Packages</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 px-0">
+                    <div class="swiper-container shopslides1 mb-3">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper" id="ActivePack">
+                            <!-- Slides -->
+                            <!--<div class="swiper-slide" >
+                        <div class="row mb-2">
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <a href="#" class="card shadow-sm mb-3 product text-normal">
+                                    <div class="card-body">
+                                        <div class="row"> <div class="col-auto"> <figure class="text-center mb-0 avatar avatar-40 page-bg rounded p-1"> <img src="assets/img/health-insurance.png" alt=""> </figure> </div><div class="col align-self-center"> <p>' + data.ActiveSubscription.package.PackageName + '<br><small class="text-opac">' + dt + '</small></p></div><div class="col-auto align-self-center"> <span class="badge bg-success badges_padding">' + data.ActiveSubscription.status + '</span> </div></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>-->
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- toast messages -->
+            <!--News and announcements -->
+            
+            <div class="row mb-2">
+                <div class="col">
+                    <div class="card shadow-sm product">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <div class="avatar avatar-50 rounded bg-danger text-white">
+                                        <i class="bi bi-people"></i>
+                                    </div>
+                                </div>
+                                <div class="col ps-0 align-self-center">
+                                    <span class="small text-opac mb-0">Employee</span>
+                                    <p class="mb-1 totalemp">0</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm product">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <div class="avatar avatar-50 rounded bg-success text-white">
+                                        <i class="bi bi-gift"></i>
+                                    </div>
+                                </div>
+                                <div class="col ps-0 align-self-center">
+                                    <span class="small text-opac mb-0">Package</span>
+                                    <p class="mb-1 packagecount">0</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- categories -->
+
+
+            <footer class="footer">
+                <div class="container">
+                    <ul class="nav nav-pills nav-justified">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/Corporate-home/">
+                                <span>
+                                    <i class="nav-icon bi bi-house-fill"></i>
+
+                                    <span class="nav-text">Home</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/EmployeeList/">
+                                <span>
+                                    <i class="nav-icon bi bi-people-fill"></i>
+                                    <span class="nav-text">Stats</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item center-item">
+                            <a class="nav-link" href="/Create_Custom_Package/">
+                                <span>
+                                    <img src="assets/img/stethoscope.png" />
+
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Corporate_Package/">
+                                <span>
+                                    <i class="nav-icon bi bi-box"></i>
+                                    <span class="nav-text">Style</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/CorporatePayment/">
+                                <span>
+                                    <i class="nav-icon bi bi-credit-card-2-back-fill"></i>
+                                    <span class="nav-text">Settings</span>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </footer>
+
+
+
+
+
+
+        </div>
+
+
+
+    </div>
+</template>
+
+<script>
+
+
+    return {
+        // Lifecycle Hooks
+        beforeCreate() {
+
+            console.log('componentBeforeCreate', this)
+        },
+        created() {
+            console.log('componentCreated', this)
+        },
+        beforeMount() {
+            console.log('componentBeforeMount', this)
+        },
+        mounted() {
+            console.log('componentMounted', this);
+        },
+        beforeDestroy() {
+            console.log('componentBeforeDestroy', this);
+        },
+        destroyed() {
+            console.log('componentDestroyed', this);
+        },
+        // Component Data
+        // Page Events
+        on: {
+            pageMounted: function (e, page) {
+
+
+            },
+            pageInit: function (e, page) {
+                console.log('pageInit', page);
+            },
+            pageBeforeIn: function (e, page) {
+                console.log('pageBeforeIn', page);
+            },
+            pageAfterIn: function (e, page) {
+               
+                console.log('pageAfterIn', page);
+                //document.getElementById("preloader").style.display ="none";
+                $(".loader-wrap").hide();
+            },
+            pageBeforeOut: function (e, page) {
+                console.log('pageBeforeOut', page);
+
+                $(".loader-wrap").hide();
+            },
+            pageAfterOut: function (e, page) {
+                console.log('pageAfterOut', page);
+
+            },
+            pageBeforeRemove: function (e, page) {
+                console.log('pageBeforeRemove', page);
+
+            },
+        }
+    }
+
+</script>
+
+
+
+
+
+
+
+
+
+

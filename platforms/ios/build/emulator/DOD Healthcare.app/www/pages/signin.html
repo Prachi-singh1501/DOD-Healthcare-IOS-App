@@ -1,0 +1,200 @@
+﻿<template>
+    
+    <div class="page no-swipe-panel" data-name="signin">
+        <script src="assets/js/GoBack.js"></script>
+
+        <style>
+            .page-content {
+                background: url(assets/img/background1%402x.png), -webkit-linear-gradient(top, #fff 10%, #c4f3f9 50%, #08abc3 100%);
+                background-attachment: fixed;
+                background-size: 100% 100% !important;
+                background-position: bottom center;
+                background-repeat: repeat-x;
+            }
+        </style>
+        <style>
+            .tooltip-btn {
+                display: none !important;
+            }
+
+            .form-floating > .form-control,
+            .form-floating > .form-select {
+                height: 3.7rem !important;
+            }
+
+            .form-floating > label {
+                top: 0 !important;
+            }
+        </style>
+
+        <script src="assets/js/button.js"></script>
+        <script src="assets/js/signin.js"></script>
+
+
+        <div class="page-content">
+
+            <!-- loader section -->
+            <div class="container-fluid loader-wrap">
+                <div class="row h-100">
+                    <div class="col-12 col-md-6 col-lg-5 col-xl-3 mx-auto text-center align-self-center">
+                        <div class="loader-cube-wrap mx-auto">
+                            <div class="loader-cube1 loader-cube"></div>
+                            <div class="loader-cube2 loader-cube"></div>
+                            <div class="loader-cube4 loader-cube"></div>
+                            <div class="loader-cube3 loader-cube"></div>
+                        </div>
+                        <p>Let's Create Difference<br><strong>Please wait...</strong></p>
+                    </div>
+                </div>
+            </div>
+            <!-- loader section ends -->
+            <!-- Begin page content -->
+            <main class="container-fluid h-100 main-container">
+                <div class="overlay-image text-end">
+                    <img src="../assets/img/orange-slice.png" class="orange-slice" alt="">
+                </div>
+                <div class="row h-100">
+                    <div class="col-12 text-center">
+                        <div class="logo-small">
+                            <img src="assets/img/logo.png" alt="" class="img">
+                            <!--<h6>GO<br><small>MobileUX</small></h6>-->
+                        </div>
+                    </div>
+                    <div class="col-12 mx-auto text-center">
+                        <div class="row ">
+                            <div class="col-11 col-sm-8 col-md-6 col-lg-4 col-xl-3 mx-auto align-self-center">
+                                <!--<h2 class="text-center mb-4 text-color-theme">Sign in</h2>-->
+                                <!--<button class="btn" onclick="testbtn()">Click</button>-->
+                                <div class="card card-light shadow-sm mb-4">
+                                    <div class="card-body">
+                                        <form class="was-validated">
+                                            <div class="form-floating mb-3">
+                                                <input type="email" class="form-control is-valid" id="emailaddress" placeholder="name@example.com">
+                                                <label for="emailaddress">Username/Email</label>
+                                                <button type="button" class="btn btn-link text-success tooltip-btn valid-tooltip"
+                                                        data-bs-toggle="tooltip" data-bs-placement="left" title="Email is valid">
+                                                    <i class="bi bi-check-circle"></i>
+                                                </button>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <input type="password" class="form-control is-invalid" id="password" placeholder="Your Password">
+                                                <label for="password">Password</label>
+                                                <button type="button" class="btn btn-link text-danger tooltip-btn invalid-tooltip"
+                                                        data-bs-toggle="tooltip" data-bs-placement="left" title="Enter valid password">
+                                                    <i class="bi bi-exclamation-circle"></i>
+                                                </button>
+                                            </div>
+                                        </form>
+                                        <div class="d-grid">
+                                            <a href="javascript:void()" class="link mb-3 text-color-theme">
+                                                Forgot
+                                                Password?
+                                            </a>
+                                        </div>
+
+
+                                        <div class="d-grid">
+                                            <!--<a   href="/verify/" id="we1">vvv</a>-->
+                                            <button id="PatientLogin" class="primary_btn" data-loading-text="<i class='fa fa-spinner fa-spin '></i>
+     Processing">
+                                                Sign
+                                                in
+                                            </button>
+                                            <!--<button type="button" class="btn btn-primary btn-lg" id="load2" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Processing">Submit Order</button>-->
+                                        </div>
+                                        <!--<button type="button" class="btn btn-primary btn-lg" id="load2" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Processing Order">Submit Order</button>-->
+                                    </div>
+                                </div>
+                                <!--<p class="text-center">OR<br>Continue with</p>
+                            <p class="text-center">
+                                <a href="#" class="btn btn-link"><i class="bi bi-facebook"></i></a>
+                                <a href="#" class="btn btn-link"><i class="bi bi-twitter"></i></a>
+                                <a href="#" class="btn btn-link"><i class="bi bi-google"></i></a>
+                            </p>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 text-center align-self-end py-2">
+                        <div class="row">
+                            <div class="col text-center">
+                                Don't have account? <a style="font-size: 18px;
+    padding: 4px 14px;
+    border-radius: 56px;
+    font-weight: 600;
+    font-style: italic;" href="/verify/" class="btn btn-link px-0 ms-2 shadow-sm3">Sign up <i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+
+        </div>
+    </div>
+</template>
+
+<script>
+
+
+    return {
+        // Lifecycle Hooks
+        beforeCreate() {
+
+            console.log('componentBeforeCreate', this)
+        },
+        created() {
+            console.log('componentCreated', this)
+        },
+        beforeMount() {
+            console.log('componentBeforeMount', this)
+        },
+        mounted() {
+            console.log('componentMounted', this);
+        },
+        beforeDestroy() {
+            console.log('componentBeforeDestroy', this);
+        },
+        destroyed() {
+            console.log('componentDestroyed', this);
+        },
+        // Component Data
+        // Page Events
+        on: {
+            pageMounted: function (e, page) {
+
+
+            },
+            pageInit: function (e, page) {
+                console.log('pageInit', page);
+            },
+            pageBeforeIn: function (e, page) {
+                console.log('pageBeforeIn', page);
+            },
+            pageAfterIn: function (e, page) {
+                console.log('pageAfterIn', page);
+                //document.getElementById("preloader").style.display ="none";
+                $(".loader-wrap").hide();
+            },
+            pageBeforeOut: function (e, page) {
+                console.log('pageBeforeOut', page);
+                
+
+            },
+            pageAfterOut: function (e, page) {
+                console.log('pageAfterOut', page);
+              
+            },
+            pageBeforeRemove: function (e, page) {
+                console.log('pageBeforeRemove', page);
+                
+            },
+        }
+    }
+
+</script>
+
+
+
+
+
+

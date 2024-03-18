@@ -1,0 +1,302 @@
+﻿<template>
+
+    <div class="page no-swipe-panel" data-name="package">
+        <script src="assets/js/GoBack.js"></script>
+
+        <script src="assets/js/package.js"></script>
+        <style>
+                        /** {
+              padding: 0;
+
+
+              margin: 0;
+              box-sizing: border-box;
+              -moz-box-sizing: border-box;
+              -webkit-box-sizing: border-box;
+              -webkit-transition: all 0s ease-in-out;
+              -moz-transition: all 0s ease-in-out;
+              -o-transition: all 0s ease-in-out;
+              transition: all 0s ease-in-out;
+            }*/
+
+                        /*.content-box {
+              width: 100%;
+              height: 400px;
+              max-width: 80%;
+              margin: 94px auto 0 auto;
+              position: relative;
+
+
+              background: gray;
+              border: 5px solid white;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+              -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+              -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            }*/
+
+
+
+
+
+
+
+
+
+                        .count {
+                            font-size: 14px;
+                            font-weight: bold;
+                        }
+
+                        .spstyle {
+                            background-color: #edc064;
+                            cursor: pointer;
+                            width: auto;
+                            padding: 0px 12px;
+                            border-radius: 10px;
+                            margin: 3px;
+                        }
+
+                        button.addbtn {
+                            width: 64px;
+                            background-color: #7775ab;
+                            border: none;
+                            border-radius: 30px;
+                            /* float: right; */
+                        }
+        </style>
+        <div class="page-content">
+
+            <!-- loader section -->
+            <div class="container-fluid loader-wrap">
+                <div class="row h-100">
+                    <div class="col-12 col-md-6 col-lg-5 col-xl-3 mx-auto text-center align-self-center">
+                        <div class="loader-cube-wrap mx-auto">
+                            <div class="loader-cube1 loader-cube"></div>
+                            <div class="loader-cube2 loader-cube"></div>
+                            <div class="loader-cube4 loader-cube"></div>
+                            <div class="loader-cube3 loader-cube"></div>
+                        </div>
+                        <!--<p>Let's Create Difference<br><strong>Please wait...</strong></p>-->
+                    </div>
+                </div>
+            </div>
+            <!-- loader section ends -->
+            <!-- profile information -->
+
+            <div class="row mb-3 header_pages">
+
+                <div class="col align-self-center  d-flex">
+                    <a href="#" class="icon back">
+                        <i class="bi bi-arrow-left-short"></i>
+                    </a>
+                    <h5 class="mb-0 pages_top_heading"> Package</h5>
+                </div>
+
+            </div>
+            <!--<div class="content-box">
+
+        </div>-->
+            <div class="row" id="packagedata">
+                <dvi class="text-center">
+                    <img id="loaderimg" src="assets/img/Loader_.gif" />
+                </dvi>
+                <!--<div class="col-6 col-md-4 col-lg-3">
+                <div class="card shadow-sm product mb-4">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <a href="#" class="text-normal text-color-theme">
+                                    <h6 class="mb-1">For Males 20-40 Years </h6>
+                                </a>
+                                <p class="mb-1">$8.00
+                                <small class="text-opac">/ per month</small>
+                                </p>
+
+                                    <h6 class="text-color-theme mt-2 mb-2">Cardiology</h6>
+
+                                <p class="mb-1"><i class="bi bi-arrow-up-right-circle text-color-theme"></i> &nbsp;ECG </p>
+                                <p class="mb-1"><i class="bi bi-arrow-up-right-circle text-color-theme"></i> &nbsp;                                        Blood Group </p>
+                                <h6 class="text-color-theme mt-2 mb-2">BioChemistry</h6>
+
+                                <p class="mb-1"><i class="bi bi-arrow-up-right-circle text-color-theme"></i> &nbsp;ECG </p>
+                                <p class="mb-1"><i class="bi bi-arrow-up-right-circle text-color-theme"></i> &nbsp;                                        Blood Group </p>
+                                <div class="text-end d-grid mt-4">
+                                    <button class="btn btn-default shadow"> Buy Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="card shadow-sm product mb-4">
+                    <div class="card-body">
+
+
+
+                        <div class="row">
+
+                            <div class="col">
+                                <a href="#" class="text-normal text-color-theme">
+                                    <h6 class="mb-1">For Males 20-40 Years </h6>
+                                </a>
+                                <p class="mb-1">
+                                    $8.00
+                                    <small class="text-opac">/ per month</small>
+                                </p>
+
+                                <h6 class="text-color-theme mt-2 mb-2">Cardiology</h6>
+
+                                <p class="mb-1"><i class="bi bi-arrow-up-right-circle text-color-theme"></i> &nbsp;ECG </p>
+                                <p class="mb-1"><i class="bi bi-arrow-up-right-circle text-color-theme"></i> &nbsp;                                        Blood Group </p>
+                                <h6 class="text-color-theme mt-2 mb-2">BioChemistry</h6>
+
+                                <p class="mb-1"><i class="bi bi-arrow-up-right-circle text-color-theme"></i> &nbsp;ECG </p>
+                                <p class="mb-1"><i class="bi bi-arrow-up-right-circle text-color-theme"></i> &nbsp;                                        Blood Group </p>
+                                <div class="text-end d-grid mt-4">
+                                    <button class="btn btn-default shadow"> Buy Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="card shadow-sm product mb-4">
+                    <div class="card-body">
+
+
+
+                        <div class="row">
+
+                            <div class="col">
+                                <a href="#" class="text-normal text-color-theme">
+                                    <h6 class="mb-1">For Males 20-40 Years </h6>
+                                </a>
+                                <p class="mb-1">
+                                    $8.00
+                                    <small class="text-opac">/ per month</small>
+                                </p>
+
+                                <h6 class="text-color-theme mt-2 mb-2">Cardiology</h6>
+
+                                <p class="mb-1"><i class="bi bi-arrow-up-right-circle text-color-theme"></i> &nbsp;ECG </p>
+                                <p class="mb-1"><i class="bi bi-arrow-up-right-circle text-color-theme"></i> &nbsp;                                        Blood Group </p>
+                                <h6 class="text-color-theme mt-2 mb-2">BioChemistry</h6>
+
+                                <p class="mb-1"><i class="bi bi-arrow-up-right-circle text-color-theme"></i> &nbsp;ECG </p>
+                                <p class="mb-1"><i class="bi bi-arrow-up-right-circle text-color-theme"></i> &nbsp;                                        Blood Group </p>
+                                <div class="text-end d-grid mt-4">
+                                    <button class="btn btn-default shadow"> Buy Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="card shadow-sm product mb-4">
+                    <div class="card-body">
+
+
+
+                        <div class="row">
+
+                            <div class="col">
+                                <a href="#" class="text-normal text-color-theme">
+                                    <h6 class="mb-1">For Males 20-40 Years </h6>
+                                </a>
+                                <p class="mb-1">
+                                    $8.00
+                                    <small class="text-opac">/ per month</small>
+                                </p>
+
+                                <h6 class="text-color-theme mt-2 mb-2">Cardiology</h6>
+
+                                <p class="mb-1"><i class="bi bi-arrow-up-right-circle text-color-theme"></i> &nbsp;ECG </p>
+                                <p class="mb-1"><i class="bi bi-arrow-up-right-circle text-color-theme"></i> &nbsp;                                        Blood Group </p>
+                                <h6 class="text-color-theme mt-2 mb-2">BioChemistry</h6>
+
+                                <p class="mb-1"><i class="bi bi-arrow-up-right-circle text-color-theme"></i> &nbsp;ECG </p>
+                                <p class="mb-1"><i class="bi bi-arrow-up-right-circle text-color-theme"></i> &nbsp;                                        Blood Group </p>
+                                <div class="text-end d-grid mt-4">
+                                    <button class="btn btn-default shadow"> Buy Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+            </div>
+
+
+        </div>
+
+    </div>
+</template>
+
+<script>
+
+
+    return {
+        // Lifecycle Hooks
+        beforeCreate() {
+
+            console.log('componentBeforeCreate', this)
+        },
+        created() {
+            console.log('componentCreated', this)
+        },
+        beforeMount() {
+            console.log('componentBeforeMount', this)
+        },
+        mounted() {
+            console.log('componentMounted', this);
+        },
+        beforeDestroy() {
+            console.log('componentBeforeDestroy', this);
+        },
+        destroyed() {
+            console.log('componentDestroyed', this);
+        },
+        // Component Data
+        // Page Events
+        on: {
+            pageMounted: function (e, page) {
+
+
+            },
+            pageInit: function (e, page) {
+                console.log('pageInit', page);
+            },
+            pageBeforeIn: function (e, page) {
+                console.log('pageBeforeIn', page);
+            },
+            pageAfterIn: function (e, page) {
+                console.log('pageAfterIn', page);
+                //document.getElementById("preloader").style.display ="none";
+                $(".loader-wrap").hide();
+            },
+            pageBeforeOut: function (e, page) {
+                console.log('pageBeforeOut', page);
+
+
+            },
+            pageAfterOut: function (e, page) {
+                console.log('pageAfterOut', page);
+
+            },
+            pageBeforeRemove: function (e, page) {
+                console.log('pageBeforeRemove', page);
+
+            },
+        }
+    }
+
+</script>
+
+
+
+
+
+

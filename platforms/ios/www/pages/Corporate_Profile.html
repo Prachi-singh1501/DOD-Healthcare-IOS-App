@@ -1,0 +1,368 @@
+﻿
+<template>
+
+    <div class="page no-swipe-panel" data-name="Corporate_Profile">
+        <script src="assets/js/GoBack.js"></script>
+        <script src="assets/js/button.js"></script>
+        <script src="assets/js/Corporate_Profile.js"></script>
+        <!--<script src="assets/js/button.js"></script>-->
+        <style>
+            .avatar.avatar-100 {
+                border: 1px solid #099fb0;
+                line-height: 96px;
+            }
+            a.icon {
+    margin-top: 0;
+}
+            .avatar > img {
+                height: 100%;
+            }
+            a.back_Password {
+    color: white;
+}
+           
+        </style>
+        <div class="page-content">
+
+            <!-- loader section -->
+            <div class="container-fluid loader-wrap">
+                <div class="row h-100">
+                    <div class="col-10 col-md-6 col-lg-5 col-xl-3 mx-auto text-center align-self-center">
+                        <div class="loader-cube-wrap mx-auto">
+                            <div class="loader-cube1 loader-cube"></div>
+                            <div class="loader-cube2 loader-cube"></div>
+                            <div class="loader-cube4 loader-cube"></div>
+                            <div class="loader-cube3 loader-cube"></div>
+                        </div>
+                        <!--<p>Let's Create Difference<br><strong>Please wait...</strong></p>-->
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3 header_pages">
+
+                <div class="col align-self-center  d-flex align-items-center">
+                    <a href="#" class="icon back">
+                        <i class="bi bi-arrow-left-short"></i>
+                    </a>
+                    <h5 class="mb-0 pages_top_heading"> Profile</h5>
+                 
+                </div>
+                <div class="col align-self-center  d-flex justify-content-right">
+                    <a href="/Corporate_change_password/"  class="back_Password">
+                       Change Password
+                    </a>
+                  
+                </div>
+            </div>
+
+
+            <!-- profile picture -->
+            <div class="row  mb-4">
+                <div class="col-auto">
+                    <figure class="avatar avatar-100 rounded mx-auto">
+                        <img id="profile_pic" class="User_Img" src="assets/img/defaultuser.png" alt="">
+                        <div class="edit_icon" id="edit_pic"><i class="bi bi-pencil"></i></div>
+                    </figure>
+
+                </div>
+                <input hidden class="form-control" type="file" id="fileinput" onchange="loadFile(event)" />
+                <div class="col align-self-center">
+                    <h5 class="UserName">Sherlyn Davis</h5>
+                    <p class="Address">
+
+
+                    </p>
+                </div>
+            </div>
+           
+            <form id="ProfileForm">
+                <div class="accordion accordion-flush rounded shadow-sm mb-4" id="accordionFlushExample">
+                    <div class="accordion-item mb-2 ">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseOne" aria-expanded="true" aria-controls="flush-collapseOne">
+                                Basic Information
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne"
+                             data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body text-opac">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="card card-light shadow-sm mb-4">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-12 col-md-6 col-lg-4">
+                                                        <div class="form-floating mb-3">
+                                                            <select id="Title" name="Title" class="form-control Profilecheck">
+                                                                <option value="">Choose Title</option>
+                                                                <option value="Mr.">Mr.</option>
+                                                                <option value="Mrs.">Mrs.</option>
+                                                                <option value="Miss.">Miss.</option>
+                                                                <option value="Dr.">Dr.</option>
+                                                            </select>
+                                                            <label for="country">Choose Title</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-md-6 col-lg-4">
+                                                        <div class="form-group form-floating  mb-3">
+                                                            <input type="text" class="form-control Profilecheck" value="Ajinkya " placeholder="Name" id="FirstName" name="FirstName">
+                                                            <label for="names">First Name</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-md-6 col-lg-4">
+                                                        <div class="form-group form-floating   mb-3">
+                                                            <input type="text" class="form-control Profilecheck" placeholder="LastName" id="LastName" name="LastName">
+                                                            <label for="LastName">Last Name</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-md-6 col-lg-4">
+                                                        <div class="form-group form-floating  mb-3">
+                                                            <input type="text" class="form-control Profilecheck" placeholder="Email " id="Email" name="Email">
+                                                            <label for="emailphone">Email</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-md-6 col-lg-4">
+                                                        <div class="form-group form-floating  mb-3">
+                                                            <input type="number" class="form-control Profilecheck" placeholder="Age" name="Age" id="Age">
+                                                            <label for="emailphone">Age</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-md-6 col-lg-4">
+                                                        <div class="form-floating mb-3">
+                                                            <select name="Gender" id="Gender" class="form-control Profilecheck">
+                                                                <option value="">Choose..</option>
+                                                                <option value="Male">Male</option>
+                                                                <option value="Female">Female</option>
+
+                                                            </select>
+                                                            <label for="country">Gender</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-md-6 col-lg-4">
+                                                        <div class="form-floating mb-3">
+                                                            <select name="MaritalStatus" id="MaritalStatus" class="form-control Profilecheck">
+                                                                <option value="">Choose..</option>
+                                                                <option value="Married">Married</option>
+                                                                <option value="UnMarried">UnMarried</option>
+
+                                                            </select>
+                                                            <label for="country">Marital Status</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-md-6 col-lg-4">
+                                                        <div class="form-floating mb-3">
+                                                            <select name="BloodGroup" id="BloodGroup" class="form-control Profilecheck">
+                                                                <option selected="" disabled="" value="">Choose...</option>
+                                                                <option value="A+">A+</option>
+                                                                <option value="A-">A-</option>
+                                                                <option value="B+">B+</option>
+                                                                <option value="B-">B-</option>
+                                                                <option value="O+">O+</option>
+                                                                <option value="O-">O-</option>
+                                                                <option value="AB+">AB+</option>
+                                                                <option value="AB-">AB-</option>
+                                                            </select>
+                                                            <label for="country">Blood Group</label>
+                                                        </div>
+                                                    </div>
+                                                    <!--<div class="col-12 col-md-6 col-lg-4">
+                                                    <div class="form-group form-floating ">
+                                                        <input type="file" class="form-control" id="fileupload">
+                                                        <label for="fileupload">Uplaod File</label>
+                                                    </div>
+                                                </div>-->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item ">
+                        <h2 class="accordion-header" id="flush-headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                Address Change
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                             data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body text-opac">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="card card-light shadow-sm mb-4">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <!--<div class="col-12 col-md-6 col-lg-4 mb-3">
+                                        <div class="form-group form-floating">
+                                            <input type="text" class="form-control" value="Maxartkiller" id="address1"
+                                                   placeholder="Your Name">
+                                            <label class="form-control-label" for="address1">Your Name</label>
+                                        </div>
+                                    </div>-->
+                                                    <input type="hidden" class="form-control Profilecheck" placeholder="Password" id="Password" name="Password">
+                                                    <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                                        <div class="form-group form-floating">
+                                                            <input type="text" class="form-control Profilecheck Address" name="Address" id="Address"
+                                                                   placeholder="Address Line 1">
+                                                            <label class="form-control-label" for="address2">Address </label>
+                                                        </div>
+                                                    </div>
+                                                   
+                                                   
+
+                                                    <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                                        <div class="form-group form-floating">
+
+                                                            <select class="form-control" onchange="GetCity()" id="StatesList"></select>
+                                                            <label class="form-control-label" for="address5">State</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                                        <div class="form-group form-floating">
+                                                            <select class="form-control Profilecheck" name="CityId" id="CityList"></select>
+                                                            <label class="form-control-label" for="address6">City</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                                        <div class="form-group form-floating">
+                                                            <input type="number" class="form-control Profilecheck" name="MobileNo" id="MobileNo" placeholder="Mobile No.">
+                                                            <label class="form-control-label" for="address7">Mobile No.</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-md-6 col-lg-4 ">
+                                                        <div class="form-group form-floating">
+                                                            <input type="number" class="form-control Profilecheck" name="PinCode" id="PinCode" placeholder="Pincode">
+                                                            <label class="form-control-label" for="address7">Pincode</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                Change Password
+                            </button>
+                        </h2>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                             data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body text-opac">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="card card-light shadow-sm mb-4">
+                                            <div class="card-body">
+                                                <div class="row ">
+                                                    <div class="col-12 col-md-6 col-lg-4">
+                                                        <div class="form-floating  mb-3">
+                                                           
+                                                            <label for="password">Password</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-md-6 col-lg-4">
+                                                        <div class="form-floating ">
+                                                            <input type="password" class="form-control" placeholder="Confirm Password" id="confirmpassword">
+                                                            <label for="confirmpassword">Confirm Password</label>
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+            </form>
+            <div class="d-grid">
+                <button onclick="UpdateProfile()" class="primary_btn" data-loading-text="<i class='fa fa-spinner fa-spin '></i>
+     Processing">
+                    Update
+                </button>
+            </div>
+            <!--<div class="row h-100 mb-4">
+            <div class="col-12 d-grid"><a href="settings.html" target="_self" class="secondary_btn">Update</a></div>
+        </div>-->
+            <br>
+
+
+
+        </div>
+    </div>
+</template>
+<script>
+
+
+    return {
+        // Lifecycle Hooks
+        beforeCreate() {
+
+            console.log('componentBeforeCreate', this)
+        },
+        created() {
+            console.log('componentCreated', this)
+        },
+        beforeMount() {
+            console.log('componentBeforeMount', this)
+        },
+        mounted() {
+            console.log('componentMounted', this);
+        },
+        beforeDestroy() {
+            console.log('componentBeforeDestroy', this);
+        },
+        destroyed() {
+            console.log('componentDestroyed', this);
+        },
+        // Component Data
+        // Page Events
+        on: {
+            pageMounted: function (e, page) {
+
+
+            },
+            pageInit: function (e, page) {
+                console.log('pageInit', page);
+            },
+            pageBeforeIn: function (e, page) {
+                console.log('pageBeforeIn', page);
+            },
+            pageAfterIn: function (e, page) {
+                console.log('pageAfterIn', page);
+                //document.getElementById("preloader").style.display ="none";
+                $(".loader-wrap").hide();
+            },
+            pageBeforeOut: function (e, page) {
+                console.log('pageBeforeOut', page);
+
+
+            },
+            pageAfterOut: function (e, page) {
+                console.log('pageAfterOut', page);
+
+            },
+            pageBeforeRemove: function (e, page) {
+                console.log('pageBeforeRemove', page);
+
+            },
+        }
+    }
+
+</script>
+
+
+
+
+
+

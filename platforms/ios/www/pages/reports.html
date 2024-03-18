@@ -1,0 +1,214 @@
+
+<template>
+
+    <div class="page no-swipe-panel" data-name="reports">
+        <script src="assets/js/GoBack.js"></script>
+        <script src="assets/js/report.js"></script>
+        <!--link href="assets/vendor/nouislider/nouislider.min.css" rel="stylesheet" />
+    <script src="assets/vendor/nouislider/nouislider.min.js"></script>-->
+        <!-- calendar -->
+
+
+
+        <style>
+            .tooltip-btn {
+                left: 35%;
+            }
+
+            .py-1 {
+                padding-top: 2.25rem !important;
+                padding-bottom: 2.25rem !important;
+            }
+
+            /*main.has-header {
+                            padding-top: 39px;
+                        }*/
+            /*.ps-0 {
+                padding-left: 10px !important;
+            }*/
+        </style>
+        <div class="page-content">
+
+            <!-- loader section -->
+            <div class="container-fluid loader-wrap">
+                <div class="row h-100">
+                    <div class="col-10 col-md-6 col-lg-5 col-xl-3 mx-auto text-center align-self-center">
+                        <div class="loader-cube-wrap mx-auto">
+                            <div class="loader-cube1 loader-cube"></div>
+                            <div class="loader-cube2 loader-cube"></div>
+                            <div class="loader-cube4 loader-cube"></div>
+                            <div class="loader-cube3 loader-cube"></div>
+                        </div>
+                        <p>Let's Create Difference<br><strong>Please wait...</strong></p>
+                    </div>
+                </div>
+            </div>
+            <!-- loader section ends -->
+            <!-- Sidebar main menu -->
+            <!-- Sidebar main menu ends -->
+            <!-- Begin page -->
+
+            <div class="row mb-3 header_pages">
+
+                <div class="col align-self-center  d-flex">
+                    <a href="#" class="icon back">
+                        <i class="bi bi-arrow-left-short"></i>
+                    </a>
+                    <h5 class="mb-0 pages_top_heading"> Lab Test Report</h5>
+                </div>
+
+            </div>
+            <!-- Coupon code -->
+
+
+            <div id="Test_Report">
+                <div class="row mb-2">
+                    <div class="text-center">
+                        <img id="loaderimg" src="assets/img/Loader_.gif" />
+                    </div>
+                    </div>
+                    <!--<div class="row mb-2">
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control is-valid" id="couponcode" placeholder="Coupon Code"
+                           value="22-02-2022">
+                    <label for="couponcode">Blood Test Report</label>
+                    <button type="button" class="btn btn-link text-success tooltip-btn valid-tooltip"
+                            data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Email is valid">
+                        <i class="bi bi-cloud-arrow-down-fill"></i>
+                    </button>
+                </div>
+            </div>
+        </div>-->
+                </div>
+            
+           
+
+
+
+            <footer class="footer">
+                <div class="container">
+                    <ul class="nav nav-pills nav-justified">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/home/">
+                                <span>
+                                    <i class="nav-icon bi bi-house-fill"></i>
+
+                                    <span class="nav-text">Home</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/upcomingappointment/">
+                                <span>
+                                    <i class="nav-icon bi bi-calendar-day-fill"></i>
+                                    <span class="nav-text">Stats</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item center-item">
+                            <a class="nav-link" href="/appointment/">
+                                <span>
+                                    <img src="assets/img/stethoscope.png" />
+
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/reports/">
+                                <span>
+                                    <i class="nav-icon bi bi-file-earmark-plus-fill"></i>
+                                    <span class="nav-text">Style</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/payment/">
+                                <span>
+                                    <i class="nav-icon bi bi-credit-card-fill"></i>
+                                    <span class="nav-text">Settings</span>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </footer>
+
+
+
+        </div>
+
+
+
+    </div>
+</template>
+
+<script>
+
+
+    return {
+        // Lifecycle Hooks
+        beforeCreate() {
+
+            console.log('componentBeforeCreate', this)
+        },
+        created() {
+            console.log('componentCreated', this)
+        },
+        beforeMount() {
+            console.log('componentBeforeMount', this)
+        },
+        mounted() {
+            console.log('componentMounted', this);
+        },
+        beforeDestroy() {
+            console.log('componentBeforeDestroy', this);
+        },
+        destroyed() {
+            console.log('componentDestroyed', this);
+        },
+        // Component Data
+        // Page Events
+        on: {
+            pageMounted: function (e, page) {
+
+
+            },
+            pageInit: function (e, page) {
+                console.log('pageInit', page);
+            },
+            pageBeforeIn: function (e, page) {
+                console.log('pageBeforeIn', page);
+            },
+            pageAfterIn: function (e, page) {
+                console.log('pageAfterIn', page);
+                //document.getElementById("preloader").style.display ="none";
+                $(".loader-wrap").hide();
+            },
+            pageBeforeOut: function (e, page) {
+                console.log('pageBeforeOut', page);
+
+
+            },
+            pageAfterOut: function (e, page) {
+                console.log('pageAfterOut', page);
+
+            },
+            pageBeforeRemove: function (e, page) {
+                console.log('pageBeforeRemove', page);
+
+            },
+        }
+    }
+
+</script>
+
+
+
+
+
+
+
+
+
+

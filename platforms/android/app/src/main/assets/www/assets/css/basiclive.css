@@ -1,0 +1,116 @@
+﻿.banner {
+    padding: 0;
+    background-color: #52575c;
+    color: white;
+}
+
+.banner-text {
+    padding: 8px 3%;
+    margin: 0;
+}
+
+
+#join-form {
+    margin-top: 10px;
+}
+
+.tips {
+    font-size: 12px;
+    margin-bottom: 2px;
+    color: gray;
+}
+
+.join-info-text {
+    margin-bottom: 2px;
+}
+
+input {
+    width: 100%;
+    margin-bottom: 2px;
+}
+#remote-playerlist div{
+    position:relative;
+    z-index:-1
+      
+}
+#local-player div {
+    position: relative
+}
+.player-name {
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    z-index: 999999;
+    color: white;
+    font-weight: 600;
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+    display: none;
+}
+#local-player-name {
+    position: absolute;
+    top: 2px;
+    right: 11px;
+    z-index: 999999;
+    color: white;
+    font-weight: 600;
+    width: 168px;
+    border-radius: 10px 10px 0px 0px;
+    background: rgba(0,0,0,0.5);
+    text-align: center;
+    display: none;
+}
+.player {
+    /*height: 100vh !important;
+    width: 90vw !important;*/
+    height: 91vh !important;
+    width: 95vw !important;
+    border-radius: 10px;
+}
+    .player div {
+        overflow: hidden;
+        background-color: black;
+        position: relative;
+        top: 0px;
+        border-radius: 10px;
+        left: 0px;
+        /* background-size: cover; */
+        /* background-position: top; */
+        right: 0px;
+    }
+    .player video{
+        /*object-fit:cover !important*/
+    }
+.local-player {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    bottom: 0;
+    /*height: 146px;*/
+    height: 200px;
+    width: 170px;
+    z-index: 999999999999999;
+}
+.local-player div{
+    border-radius:10px;
+}
+
+.player-name {
+    margin: 8px 0;
+}
+
+#success-alert, #success-alert-with-token {
+    display: none;
+}
+
+@media (max-width: 640px) {
+    .player {
+        width: auto;
+        height: 125vh;
+    }
+}
+@media (min-width: 1400px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 90vw !important;
+    }
+}

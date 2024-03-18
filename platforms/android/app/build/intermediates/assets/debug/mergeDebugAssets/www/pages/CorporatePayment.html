@@ -1,0 +1,271 @@
+﻿
+<template>
+
+    <div class="page no-swipe-panel" data-name="corporate_payment">
+        <script src="assets/js/GoBack.js"></script>
+
+        <style>
+            i.bi.bi-three-dots-vertical {
+                margin-right: -30px;
+            }
+
+            .border {
+                border: 0px solid #dee2e6 !important;
+            }
+
+            .dropdown-toggle::after {
+                border-top: 0;
+                border-right: 0;
+                border-left: 0;
+            }
+        </style>
+        <script src="assets/js/Corporate_Payment.js"></script>
+        <div class="page-content">
+            <!-- loader section -->
+            <div class="container-fluid loader-wrap">
+                <div class="row h-100">
+                    <div class="col-10 col-md-6 col-lg-5 col-xl-3 mx-auto text-center align-self-center">
+                        <div class="loader-cube-wrap mx-auto">
+                            <div class="loader-cube1 loader-cube"></div>
+                            <div class="loader-cube2 loader-cube"></div>
+                            <div class="loader-cube4 loader-cube"></div>
+                            <div class="loader-cube3 loader-cube"></div>
+                        </div>
+                        <!--<p>Let's Create Difference<br><strong>Please wait...</strong></p>-->
+                    </div>
+                </div>
+            </div>
+            <!-- loader section ends -->
+            <!--<div class="row mb-3">
+                <div class="col align-self-center">
+                    <h5 class="mb-0"> Upcoming Appointments</h5>
+                </div>
+                <div class="col-auto pe-0">
+
+                </div>
+            </div>-->
+            <div class="row mb-3 header_pages">
+
+                <div class="col align-self-center  d-flex">
+                    <a href="#" class="icon back">
+                        <i class="bi bi-arrow-left-short"></i>
+                    </a>
+                    <h5 class="mb-0 pages_top_heading"> Payments</h5>
+                </div>
+
+            </div>
+            <div class="row mb-2 " id="Payment_List">
+                <dvi class="text-center">
+                    <img id="loaderimg" src="assets/img/Loader_.gif" />
+                </dvi>
+                <!--<div class="col-12 col-md-6 col-lg-3">
+                    <div class="card shadow-sm mb-3">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="row">
+                                    <div class="col">
+                                        <h6>
+                                            PayId:
+                                        </h6>
+                                    </div>
+                                    <div class="col-auto">
+                                        DODINV-58e8a
+                                    </div>
+                                    <div class="col-auto">
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <h6>
+                                           PayDate:
+                                        </h6>
+                                    </div>
+                                    <div class="col-auto">
+                                        18-11-2022
+                                    </div>
+                                    <div class="col-auto">
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <h6>
+                                            PayMode:
+                                        </h6>
+                                    </div>
+                                    <div class="col-auto">
+                                        Online
+                                    </div>
+                                    <div class="col-auto">
+                                        <button class="btn rounded-pill border dropdown-toggle" type="button" id="dropdownMenuButton' + i + '" data-bs-toggle="dropdown" aria-expanded="false"> <i class="ri-more-2-fill"></i> </button><ul class="dropdown-menu" aria-labelledby="dropdownMenuButton'+i+'" style=""><li><a class="dropdown-item" href="/appointmentEdit/">Edit</a></li><li><a class="dropdown-item CancelApp">Cancel Appointment</a></li><li><a class="dropdown-item" href="#">Video Consultation</a></li>'</ul>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <h6>
+                                            Pay For:
+                                        </h6>
+                                    </div>
+                                    <div class="col-auto">
+                                        Appointment
+                                    </div>
+                                    <div class="col-auto">
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <h6>
+                                            Amount:
+                                        </h6>
+                                    </div>
+                                    <div class="col-auto">
+                                        154515
+                                    </div>
+                                    <div class="col-auto">
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <h6>
+                                            Status:
+                                        </h6>
+                                    </div>
+                                    <div class="col-auto">
+                                        18-11-2022
+                                    </div>
+                                    <div class="col-auto">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
+                
+            </div>
+
+            <footer class="footer">
+                <div class="container">
+                    <ul class="nav nav-pills nav-justified">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Corporate_Home/">
+                                <span>
+                                    <i class="nav-icon bi bi-house-fill"></i>
+
+                                    <span class="nav-text">Home</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/EmployeeList/">
+                                <span>
+                                    <i class="nav-icon bi bi-people-fill"></i>
+                                    <span class="nav-text">Stats</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item center-item">
+                            <a class="nav-link" href="/Create_Custom_Package/">
+                                <span>
+                                    <img src="assets/img/stethoscope.png" />
+
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Corporate_Package/">
+                                <span>
+                                    <i class="nav-icon bi bi-box"></i>
+                                    <span class="nav-text">Style</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/CorporatePayment/">
+                                <span>
+                                    <i class="nav-icon bi bi-credit-card-2-back-fill"></i>
+                                    <span class="nav-text">Settings</span>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </footer>
+
+        </div>
+
+
+    </div>
+</template>
+
+<script>
+
+
+    return {
+        // Lifecycle Hooks
+        beforeCreate() {
+
+            console.log('componentBeforeCreate', this)
+        },
+        created() {
+            console.log('componentCreated', this)
+        },
+        beforeMount() {
+            console.log('componentBeforeMount', this)
+        },
+        mounted() {
+            console.log('componentMounted', this);
+        },
+        beforeDestroy() {
+            console.log('componentBeforeDestroy', this);
+        },
+        destroyed() {
+            console.log('componentDestroyed', this);
+        },
+        // Component Data
+        // Page Events
+        on: {
+            pageMounted: function (e, page) {
+
+
+            },
+            pageInit: function (e, page) {
+                console.log('pageInit', page);
+            },
+            pageBeforeIn: function (e, page) {
+                console.log('pageBeforeIn', page);
+            },
+            pageAfterIn: function (e, page) {
+                console.log('pageAfterIn', page);
+                //document.getElementById("preloader").style.display ="none";
+               $(".loader-wrap").hide();
+            },
+            pageBeforeOut: function (e, page) {
+                console.log('pageBeforeOut', page);
+
+
+            },
+            pageAfterOut: function (e, page) {
+                console.log('pageAfterOut', page);
+
+            },
+            pageBeforeRemove: function (e, page) {
+                console.log('pageBeforeRemove', page);
+
+            },
+        }
+    }
+
+</script>
+
+
+
+
+
+
+
+
+
