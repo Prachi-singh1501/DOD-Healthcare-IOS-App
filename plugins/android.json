@@ -1,0 +1,50 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.healthcare.dod"
+    },
+    "com.bandpad.cordova.microphone": {
+      "PACKAGE_NAME": "com.healthcare.dod"
+    },
+    "cordova-custom-config": {
+      "PACKAGE_NAME": "com.healthcare.dod"
+    },
+    "cordova-plugin-android-permissions": {
+      "PACKAGE_NAME": "com.healthcare.dod"
+    },
+    "cordova-plugin-audioinput": {
+      "PACKAGE_NAME": "com.healthcare.dod"
+    },
+    "cordova-plugin-camera": {
+      "ANDROIDX_CORE_VERSION": "1.6.+",
+      "PACKAGE_NAME": "com.healthcare.dod"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.healthcare.dod"
+    },
+    "cordova-plugin-file": {
+      "ANDROIDX_WEBKIT_VERSION": "1.4.0",
+      "PACKAGE_NAME": "com.healthcare.dod"
+    },
+    "cordova-plugin-headsetdetection": {
+      "PACKAGE_NAME": "com.healthcare.dod"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "com.healthcare.dod"
+    },
+    "cordova-plugin-vibration": {
+      "PACKAGE_NAME": "com.healthcare.dod"
+    },
+    "cordova-plugin-ns0m-file-transfer": {
+      "PACKAGE_NAME": "com.healthcare.dod"
+    }
+  },
+  "dependent_plugins": {}
+}
